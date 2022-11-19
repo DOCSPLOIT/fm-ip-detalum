@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <!-- IP Address Tracker  -->
+    <!-- IP Address  -->
+    <!-- Timezone UTC -->
+    <!-- add offset value dynamically using the API -->
+    <!-- ISP -->
+
+    <main class="h-screen w-screen">
+      <div class="pattern w-full h-[35vh] relative overflow-visible">
+        <h1 class="text-white m-auto text-center text-3xl font-bold pt-7">
+          IP Address Tracker
+        </h1>
+        <div
+          onclick="search.focus()"
+          class="bg-white w-3/4 md:w-2/5 m-auto overflow-hidden flex mt-8 rounded-xl"
+        >
+          <input
+            id="search"
+            placeholder="Search for any IP address or domain"
+            class="bg-transparent p-3 grow outline-none"
+          />
+          <i
+            onclick="getIpInfo()"
+            class="bg-black w-[48px] z-10 text-white text-xl cursor-pointer hover:bg-gray-600 h-full text-center align-middle py-3 font-extrabold"
+            >></i
+          >
+        </div>
+        <div
+          class="absolute bg-white w-3/4 flex flex-col md:flex-row p-4 top-[72%] z-[2000] text-center md:space-x-3 rounded-xl drop-shadow-lg left-[12.5%] right-[12.5%]"
+        >
+          <div class="md:border-r md:grow md:px-3">
+            <label class="text-sm font-bold text-gray-500">IP ADDRESS</label>
+            <p id="ip" class="font-bold text-gray-800 text-2xl mt-3"></p>
+          </div>
+          <div class="md:border-r md:grow md:px-3">
+            <label class="text-sm font-bold uppercase text-gray-500"
+              >Location</label
+            >
+            <p id="location" class="font-bold text-gray-800 text-2xl mt-3"></p>
+          </div>
+          <div class="md:border-r md:grow md:px-3">
+            <label class="text-sm font-bold uppercase text-gray-500"
+              >Timezone
+            </label>
+            <p id="timezone" class="font-bold text-gray-800 text-2xl mt-3"></p>
+          </div>
+          <div class="md:w-1/4 md:px-3">
+            <label class="text-sm font-bold text-gray-500">ISP</label>
+            <p id="isp" class="font-bold text-gray-800 text-2xl mt-3"></p>
+          </div>
+        </div>
+      </div>
+      <div class="h-[65vh]" id="map"></div>
+    </main>
+
+    <!-- <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer> -->
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
