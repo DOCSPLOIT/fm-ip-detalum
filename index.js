@@ -1,8 +1,7 @@
 const _loc = document.querySelector("#location");
 let latLong = [0, 0];
 
-const apiKey =
-  location.search.split("=")[1] ?? "at_3RBNdNq0twrczK2q5gwTKgKbGC5hB";
+const apiKey = location.search.split("=")[1];
 
 function getIpInfo() {
   fetch(
